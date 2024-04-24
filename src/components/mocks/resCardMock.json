@@ -1,0 +1,65 @@
+{
+	"info": {
+		"id": "662744",
+		"name": "Om Bikaner",
+		"cloudinaryImageId": "6fee0afad5796186bdfa549037ba2e70",
+		"locality": "Kakraula Houshing Complex",
+		"areaName": "Dwarka",
+		"costForTwo": "₹299 for two",
+		"cuisines": ["Sweets", "Chinese", "Burgers", "Fast Food"],
+		"avgRating": 4.4,
+		"veg": true,
+		"parentId": "14756",
+		"avgRatingString": "2.4",
+		"totalRatingsString": "1",
+		"sla": {
+			"deliveryTime": 36,
+			"lastMileTravel": 2.5,
+			"serviceability": "SERVICEABLE",
+			"slaString": "35-40 mins",
+			"lastMileTravelString": "2.5 km",
+			"iconType": "ICON_TYPE_EMPTY"
+		},
+		"availability": {
+			"nextCloseTime": "2024-04-19 23:00:00",
+			"opened": true
+		},
+		"badges": {},
+		"isOpen": true,
+		"aggregatedDiscountInfoV2": {},
+		"type": "F",
+		"badgesV2": {
+			"entityBadges": {
+				"imageBased": {},
+				"textBased": {},
+				"textExtendedBadges": {}
+			}
+		},
+		"orderabilityCommunication": {
+			"title": {},
+			"subTitle": {},
+			"message": {},
+			"customIcon": {}
+		},
+		"differentiatedUi": {
+			"displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+			"differentiatedUiMediaDetails": {
+				"mediaType": "ADS_MEDIA_ENUM_IMAGE",
+				"lottie": {},
+				"video": {}
+			}
+		},
+		"reviewsSummary": {},
+		"displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+		"restaurantOfferPresentationInfo": {}
+	},
+	"analytics": {
+		"context": "seo-data-3c39b669-5e1e-446b-a23a-56555af2cd57"
+	},
+	"cta": {
+		"link": "https://www.swiggy.com/restaurants/om-bikaner-kakraula-houshing-complex-dwarka-delhi-662744",
+		"text": "RESTAURANT_MENU",
+		"type": "WEBLINK"
+	},
+	"widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+}

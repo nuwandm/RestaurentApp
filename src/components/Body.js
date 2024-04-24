@@ -20,7 +20,6 @@ const Body = () => {
 	const fetchData = async () => {
 		const data = await fetch(DATA_API);
 		const json = await data.json();
-
 		setListOfRestaurants(
 			json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
 		);
@@ -43,7 +42,7 @@ const Body = () => {
 		setFilteredRestaurants(searchedResults);
 	};
 
-	// this related with higher order component take a component as an argument and component a component with some modifications
+	// this related with higher order component take a component as an argument and returns a component with some modifications
 	const RestaurantTopRated = topRatedRestaurant(RestaurantCard);
 
 	if (!online)
@@ -56,9 +55,10 @@ const Body = () => {
 			<div className="bg-pink-50 mb-2 p-2 flex justify-between">
 				<div className="bg-pink-50 mb-2 p-2 flex ">
 					<button className="mr-2" onClick={filterCard}>
-						Top Rated Restaurants :
+						Search Restaurants :
 					</button>
 					<input
+						data-testid="searchInput"
 						value={searchText}
 						onChange={(e) => {
 							setSearchText(e.target.value);
@@ -74,6 +74,25 @@ const Body = () => {
 						Search
 					</button>
 				</div>
+				<button
+					className="rounded-lg bg-yellow-200 px-2 "
+					onClick={() => {
+						const filteredList = listOfRestaurants.filter(
+							(res) => res.info.avgRating > 4.2
+						);
+						setFilteredRestaurants(filteredList);
+					}}
+				>
+					top rated restaurants
+				</button>
+				<button
+					className="rounded-lg bg-yellow-200 px-2 "
+					onClick={() => {
+						setFilteredRestaurants(listOfRestaurants);
+					}}
+				>
+					clear
+				</button>
 				<div className="">
 					User Name :{" "}
 					<input
@@ -90,7 +109,7 @@ const Body = () => {
 						key={restaurant?.info?.id}
 						to={"/restaurant/" + restaurant?.info?.id}
 					>
-						{restaurant.info.avgRating > 4.2 ? (
+						{restaurant?.info?.avgRating > 4.2 ? (
 							<RestaurantTopRated resData={restaurant} />
 						) : (
 							<RestaurantCard resData={restaurant} />

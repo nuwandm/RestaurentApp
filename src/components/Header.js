@@ -10,8 +10,9 @@ const Header = () => {
 	const [logButton, setLogButton] = useState("LogIn");
 	const onlineStatus = useOnlineStatus();
 	const logBtnClick = () => {
-		logButton === "Login" ? setLogButton("Log Out") : setLogButton("Login");
+		logButton === "Login" ? setLogButton("Logout") : setLogButton("Login");
 	};
+	const [btnNameReact, setBtnNameReact] = useState("Login");
 
 	// this is to subscribe our store
 	const cartItems = useSelector((store) => store.cart.items);
@@ -37,11 +38,21 @@ const Header = () => {
 					<li className="hover:underline underline-offset-4 font-bold">
 						<Link to="/cart">Cart - ({cartItems.length} Items)</Link>
 					</li>
-					<button
+					{/* <button
 						className="bg-blue-200 hover:bg-blue-600 hover:text-white rounded px-2 py-1"
 						onClick={logBtnClick}
 					>
 						{logButton}
+					</button> */}
+					<button
+						className="login"
+						onClick={() => {
+							btnNameReact === "Login"
+								? setBtnNameReact("Logout")
+								: setBtnNameReact("Login");
+						}}
+					>
+						{btnNameReact}
 					</button>
 					<li className="bg-slate-300 rounded-md px-2 py-1">
 						online status : {onlineStatus ? "🟢" : " 🔴"}
